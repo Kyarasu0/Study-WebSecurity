@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ログイン成功</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <h1>ログイン成功！</h1>
+    <p>ようこそ、<span id="username"></span> さん</p>
+    <form>
+        <button type="button" onclick="location.href='index.html'">ホームへ戻る</button>
+    </form>
+</body>
+
+<script>
+    // Cookieを読み取る関数
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+
+    // usernameを取得して表示
+    const username = getCookie('username');
+    if (username) {
+        document.getElementById('username').textContent = username;
+    }
+</script>
+
+</html>

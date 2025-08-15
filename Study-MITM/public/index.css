@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
+    color: #00f3ff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #00f3ff;
+    text-shadow: 0 0 5px #00f3ff, 0 0 15px #00f3ff, 0 0 30px #00f3ff;
+}
+
+form {
+    background: rgba(15, 15, 20, 0.85);
+    padding: 40px;
+    width: 320px;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 243, 255, 0.4);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.3), inset 0 0 10px rgba(0, 243, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 20px 0;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    background: rgba(0, 243, 255, 0.1);
+    color: #00f3ff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    background: rgba(0, 243, 255, 0.2);
+    box-shadow: 0 0 10px #00f3ff;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(90deg, #00f3ff, #a64dff);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 0 10px #00f3ff, 0 0 20px #a64dff;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    box-shadow: 0 0 20px #00f3ff, 0 0 30px #a64dff;
+    transform: translateY(-2px);
+}
+
+p {
+    text-align: center;
+    margin-top: 15px;
+    color: #ccc;
+}
+
+a {
+    color: #00f3ff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #a64dff;
+    text-shadow: 0 0 5px #a64dff;
+}

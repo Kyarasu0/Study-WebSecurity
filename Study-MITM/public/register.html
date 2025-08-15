@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>新規登録</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <h1>新規登録</h1>
+    <form id="registerForm">
+        <input type="text" name="username" placeholder="ユーザー名" required><br>
+        <input type="password" name="password" placeholder="パスワード" required><br>
+        <button type="submit">登録</button>
+    </form>
+    <p><a href="login.html">ログインページへ戻る</a></p>
+
+    <script>
+        const form = document.getElementById('registerForm');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault(); // ページ遷移を止める
+
+            const formData = new FormData(form);
+            const data = {
+                username: formData.get('username'),
+                password: formData.get('password')
+            };
+
+            try {
+                const res = await fetch('/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (res.ok) {
+                    alert('登録成功！ログインページへ移動します');
+                    window.location.href = 'login.html';
+                } else {
+                    const text = await res.text();
+                    alert('登録失敗: ' + text);
+                }
+            } catch (err) {
+                alert('通信エラー: ' + err.message);
+            }
+        });
+    </script>
+</body>
+</html>
